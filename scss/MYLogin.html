@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>My Login page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    html, body {
+    font-family: 'Poppins', sans-serif;
+    }
+    body{
+        min-height:100vh;
+        display: flex;
+        align-items: center;
+        background: rgb(108, 108, 204);
+        box-shadow: 0,0,0,0.3;
+        
+    }
+    .container{
+        position:relative;
+        max-width: 850px;
+        width:100%;
+        background: white;
+        border-radius: 5px;
+        perspective: 2800px;
+        /* box-shadow: 0px 5px 10px rgba(0,0, 0, 0.2); */
+        transition: all 1s ease;
+    }
+
+    .container #flip:checked ~ .cover{
+        transform: rotateY(-180deg);
+    }
+   .container .cover::before{
+       content: '';
+       position: absolute;
+       height: 100%;
+       width:100%;
+       background: rgb(108, 108, 204);
+       opacity: 0.5;
+       z-index: 100;
+
+   }
+   .container .cover::after{
+       content: '';
+       position: absolute;
+       height: 100%;
+       width:100%;
+       background: rgb(108, 108, 204);
+       opacity: 0.5;
+     
+   }
+  .container .cover{
+        position: absolute;
+        top: 0;
+        height:100% ;
+        width: 50%;
+        left: 50%;
+        z-index: 98;
+        transition: all 1s ease;
+        transform-origin: left;
+        transform-style: preserve-3d;
+    }
+
+    .container .cover img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+       z-index: 12;
+       backface-visibility: hidden;
+      
+    }
+
+    .container .cover .back .backImg{
+        transform: rotateY(180deg);
+    }
+   .container .cover .text{
+       position: absolute;
+       z-index: 111;
+       height: 100%;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items:center;
+       justify-content: center;
+   }
+  
+   .cover .text .text1,
+   .cover .text .text2{
+       font-weight: 600;
+       font-size: 30px;
+       color:white;
+       text-align: center;
+       backface-visibility: hidden;
+
+   }
+   .cover .back .text .text1,
+   .cover .back .text .text2{
+       transform:rotateY(180deg);
+   }
+   .cover .text .text2,
+   .cover .back.text .text2{
+    font-size: 19px;
+    font-weight: 700;
+    color:navy;
+   }
+
+    input{
+        border: none   !important;
+        transition: all 0.3s ease;
+    }
+    input:focus{
+        outline:0 !important;
+        border: none !important;
+    }
+    .title{
+            font-weight: bold;
+            font-size: 30px;    
+    }
+   
+    .sam{
+        border-bottom: 2px solid lightgray;
+       
+    }
+    .sam:focus-within{
+      border-bottom-color:  orange !important;
+    }
+    .MyColor{
+        color: navy;
+    }
+    .form-group .btn{
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+    </style>
+</head>
+<body>
+        <div class="container shadow">
+            <input type="checkbox" id="flip">
+            <div class="cover">
+                <div class="fpic">
+                    <img src="../images/newway.jpg" alt="">
+                </div>
+                <div class="text">
+                    <span class="text1">Lilies Restaurant</span>
+                    <span class="text2">There's no sincerer love than the love of food</span>
+                </div>
+                <div class="back">
+                   <img src="../images/Oldway.jpg" class="backImg" alt="">
+                   <div class="text">
+                    <span class="text1">Lilies Restaurant</span>
+                    <span class="text2"> Lilies offers different meals with smart and <br> unique presentation</span>
+                </div>
+                </div>
+               
+            </div>
+            <form action="">
+                <main class="d-flx p-4" style="display: flex; justify-content: space-evenly;">
+                   <div class="form-content">
+                        <div class=" text-center">
+                            <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
+                                <i class="fa fa-cutlery fa-lg MyColor"></i>
+                                Lilies  </a>
+                        </div>
+                        <div class="title mb-3 MyColor">Login</div>
+                        <div class="input-boxes">
+                            <div class="form-group">
+                               <div class="sam p-2">
+                                <i class="fa MyColor fa-envelope"></i>
+                                <input type="text" class="" placeholder="Enter your Email" required>
+                               </div>
+                            </div>
+    
+                            <div class=" form-group">
+                               <div class="sam p-2">
+                                    <i class="fa MyColor fa-envelope"></i>
+                                    <input type="text"  placeholder="Enter your Password" required>
+                               </div>
+                               <div class="mt-1"><a href="#"> Forgot Password?</a></div>
+                            </div>
+                            <button class="btn font-weight-bold text-white text-center px-5 mt-3 w-100" style="background-color: navy;">LOGIN</button>
+                            <div class="pt-2">Don't have an account? <a href="#"><label for="flip">Sign Up</label></a></div>
+                        </div>
+                     </div>
+                  <div class="SignUp">
+                    <div class=" text-center">
+                        <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
+                            <i class="	fa fa-cutlery fa-lg MyColor"></i>
+                             Lilies  </a>
+                       </div>
+                        <div class="title MyColor mb-3">Sign Up</div>
+                            <div class="input-boxes">
+                                <div class="form-group">
+                                    <div class="sam p-2">
+                                        <i class="fa fa-user MyColor"></i>
+                                        <input type="text" placeholder="Enter your Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                   <div class="sam p-2">
+                                    <i class="fa fa-envelope MyColor"></i>
+                                    <input type="text" placeholder="Enter your Email" required>
+                                   </div>
+                                </div>
+                                <div class="form-group">
+                                   <div class="sam p-2">
+                                    <i class="fa fa-envelope MyColor"></i>
+                                    <input type="text" placeholder="Enter your Username" required>
+                                   </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="sam p-2">
+                                     <i class="fa fa-envelope MyColor"></i>
+                                     <input type="text" placeholder="Enter your Username" required>
+                                    </div>
+                                 </div>
+                                   <button class="btn w-100 font-weight-bold text-white" style="background-color: navy;">SUBMIT</button>
+                                   <div class="pt-2">Already have an account? <a href="#"><label for="flip">Sign In</label></a></div>
+                            </div>
+                <main>
+            
+            </form>
+        </div>
+</body>
+</html>

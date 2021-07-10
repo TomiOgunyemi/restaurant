@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-Restaurant</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/level2project.js"></script>
+    <style>
+        .sty{
+            font-weight: bold;
+            font-style: italic;
+            font-stretch: normal;
+            font-family:Lucida Handwriting, Cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(233, 173, 19);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm container-fluid bg-light sticky-top">
+        <a href="home.html" class="navbar-brand m-2 text-muted options fw-bold"> 
+            <i class="	fa fa-cutlery fa-lg text-warning"></i>
+             Lilies  </a>
+      
+           <div class="navbar-collapse collapse justify-content-end" id="collap">
+            <ul class="navbar-nav">
+                <li class="navbar-item dropdown">
+                    
+                    <a href="#" style="text-decoration: none;" class=" options nav-link text-muted m-2 dropdown-toggle  "  id="navbardrop" data-bs-toggle="dropdown"> Reservations</a>
+                    
+                    <div class="dropdown-menu">
+                        <p  class="drowdown-item m-2 fw-bold options">Table for Two</p>
+                    </div>
+
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#"  style="text-decoration: none;" class="options nav-link text-muted m-2 "> About</a>
+                </li>
+               <a href="Sign_In.html" id="signin_btn" class=" btn shadow p-2 m-2 fw-bold"><i class="fa fa-user me-1"></i> Sign In</a>
+               <button id="logout_btn" onclick="logOut()" class=" btn shadow p-2 m-2 fw-bold" hidden><i class="fa fa-user me-1" ></i> Log Out</button>
+               <a href="Order-Restaurant.html"> <button class=" btn btn-warning shadow p-2 m-2 fw-bold">Order Now</button></a>
+               <a href="Admin-dashboard.html"> <button class=" btn text-warning shadow p-2 m-2 fw-bold">Admin</button></a>
+            </ul>
+           </div>
+            
+    </nav> 
+
+    <div class="mother d-sm-none justify-content-end" data-bs-toggle="collapse"  data-bs-target ="#collap" onclick="myBurger(this)">
+        <div class="bar1"></div> 
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-sm mt-4">
+                 <img src="images/outside.jpg" alt="" width="100%">
+            </div>
+            <div class="col-sm p-5">
+                <h2 class="sty text-center mt-5">Our Story</h2>
+               
+                <h4 class="text-center mt-2">SINCE 1999</h4>
+                <hr>
+                <h4 class="text-center mt-3 text-warning">"There's no sincerer love than <br> the love of food"</h4>
+                <h6 class="text-center"> George Bernard Shaw</h6>
+                <p class="text-center mt-3 fw-bold text-muted"><strong>WELCOME,</strong> This is Lilies Elegant & sophisticated restaurant .
+                     Lilies offers different meals with smart and unique presentation,
+                      showcasing beautifully and deliciously made meals/ drinks. 
+                     So, give it a try and dive into a world of Lilies restaurant delicacies.</p>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <div class="col-sm p-5">
+                <h2 class="sty text-center mt-5">Warm Atmosphere</h2>
+               
+                <h4 class="text-center mt-2">INDOOR</h4>
+                <hr>
+                <h4 class="text-center mt-3 text-warning">"There's no sincerer love than <br> the love of food"</h4>
+                <h6 class="text-center"> George Bernard Shaw</h6>
+                <p class="text-center mt-3 fw-bold text-muted"><strong>WELCOME,</strong> This is Lilies Elegant & sophisticated restaurant .
+                     Lilies offers different meals with smart and unique presentation,
+                      showcasing beautifully and deliciously made meals/ drinks. 
+                     So, give it a try and dive into a world of Lilies restaurant delicacies.</p>
+            </div>
+            <div class="col-sm mt-4">
+                <img src="images/inside.jpg" alt="" width="100%">
+           </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm mt-4" style="height: 100%;  width: 100%; overflow: hidden;">
+                <img src="images/real -chef.webp" alt="" width="130%">
+           </div>
+            
+            <div class="col-sm p-5">
+                <h2 class="sty text-center mt-5">Lovely Chefs</h2>
+               
+                <h4 class="text-center mt-2">INDOOR</h4>
+                <hr>
+                <h4 class="text-center mt-3 text-warning">"There's no sincerer love than <br> the love of food"</h4>
+                <h6 class="text-center"> George Bernard Shaw</h6>
+                <p class="text-center mt-3 fw-bold text-muted"><strong>WELCOME,</strong> This is Lilies Elegant & sophisticated restaurant .
+                     Lilies offers different meals with smart and unique presentation,
+                      showcasing beautifully and deliciously made meals/ drinks. 
+                     So, give it a try and dive into a world of Lilies restaurant delicacies.</p>
+            </div>
+           
+        </div>
+
+        <div class="row">
+           
+            <div class="col-sm p-5">
+                <h2 class="sty text-center mt-5">Our Kitchen</h2>
+                <hr>
+                <h4 class="text-center mt-3 text-warning">"Clean and sophisticated cooking environment. All for <br> the love of food"</h4>
+                <h6 class="text-center"> George Bernard Shaw</h6>
+                <p class="text-center mt-3 fw-bold text-muted"><strong>WELCOME,</strong> This is Lilies Elegant & sophisticated restaurant .
+                     Lilies offers different meals with smart and unique presentation,
+                      showcasing beautifully and deliciously made meals/ drinks. 
+                     So, give it a try and dive into a world of Lilies restaurant delicacies.</p>
+            </div>
+            <div class="col-sm mt-4">
+                <img src="images/man&kitchen.jpg" alt="" width="100%">
+           </div>
+        </div>
+    </section>
+</body>
+
+<script src="js/level2project.js"></script>
+</html>

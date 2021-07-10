@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="level2project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Sign In</title>
+    <style>
+         body{
+            font-size: 14px;
+        }
+        .card{
+            /* height: 400px; */
+            width: 40%;
+        }
+        @media only screen and (max-width: 600px) {
+  .card {
+        width: 300px;
+        /* height: 500px; */
+
+  }
+}
+    </style>
+</head>
+<body class=" s-cover">
+     <!-- NAVBAR -->
+     <nav class="navbar navbar-expand-sm container-fluid bg-white sticky-top">
+        <a href="home.html" class="navbar-brand m-2 text-muted options fw-bold"> 
+            <i class="	fa fa-cutlery fa-lg text-warning"></i>
+             Lilies  </a>
+      
+           <div class="navbar-collapse collapse justify-content-end" id="collap">
+            <ul class="navbar-nav">
+                <li class="navbar-item dropdown">
+                    
+                    <a href="#" style="text-decoration: none;" class=" options nav-link text-muted m-2 dropdown-toggle  "  id="navbardrop" data-bs-toggle="dropdown"> Reservations</a>
+                    
+                    <div class="dropdown-menu">
+                        <p  class="drowdown-item m-2 fw-bold options">  Table for two</p>
+                    </div>
+
+                </li>
+
+                <li class="navbar-item">
+                    <a href="AboutUs.html"  style="text-decoration: none;" class="options nav-link text-muted m-2 "> About</a>
+                </li>
+                <a href="Order- Restaurant.html"> <button class=" btn btn-warning shadow p-2 m-2 fw-bold">Order Now</button></a>
+            </ul>
+           </div>
+            
+    </nav> 
+    <div class="mother d-sm-none justify-content-end" data-bs-toggle="collapse"  data-bs-target ="#collap" onclick="myBurger(this)">
+        <div class="bar1"></div> 
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    <main class="card card-body shadow  mx-auto mt-5" id="box">
+        <div class=" text-center">
+            <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
+                <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                 Lilies  </a>
+           </div>
+            <br>
+          <div  style="font-size: 24px; "  id="signIn" class=" w-75 fw-bold text-warning mx-auto text-center"> SIGN IN</div>
+     
+      <section id="form1">
+             <div class="form-group">
+                 <label for="Email" class="fw-bold mt-3" >Email</label>
+                 <input type="email" class="form-control p-2" placeholder="Enter your Email" onkeyup="validate()" id="e_mail">
+                 <h6 id="displ"></h6>
+                 <label for="Password" class="fw-bold mt-3">Password</label>
+                 <input type="password" class="form-control p-2" id="pass_word"  placeholder="Enter your Password">
+                 <div class="form-group form-check mt-3">
+                    <label class="form-check-label">
+                      <input class="form-check-input fw-bold" type="checkbox"> Remember me
+                    </label>
+                  </div>
+                 <p class="text-right fw-bold mt-2"><a style="text-decoration: none;" href="#">Forgot your password?</a></p>
+                 <div class="row">
+                     <div class="col-sm"><button style="font-size: 24px; background-color: orange; border-radius: 5px; " onclick="sign_in()" class=" text-white w-100  shadow  fw-bold"> Sign in</button></div>
+                 </div>
+             </div>
+       </section>
+     </main>
+     <script>
+
+        function sign_in(){
+                //  to get the value of each input
+            let email = document.getElementById('e_mail').value
+            let pass = document.getElementById('pass_word').value
+            let user_data;
+            
+            //   to get data from local storage
+            let data_base = localStorage.getItem('admin_data')
+            data_base =  JSON.parse(data_base)
+            console.log(data_base)
+
+            // to check for email and password
+            let match=false  //to save login status
+            for (let i = 0; i < data_base.length; i++) {
+               if (data_base[i].email==email && data_base[i].password== pass) {
+                   user_data=data_base[i]
+                   match = true
+                   break;
+               }
+            }
+            //to check for true login status
+            if(match==true){
+                user_data=JSON.stringify(user_data)
+                localStorage.setItem('user',user_data)
+              
+                localStorage.setItem('login_status',true) // to save the status in a local storge
+                window.location.href = "home.html"
+                return;
+            }
+
+            let p = document.createElement('p')
+            p.innerText = "Login not successful"
+            p.classList.add('alert', 'alert-danger')
+            document.getElementById('box').prepend(p)
+            setTimeout(function (){
+                document.getElementById('box').removeChild(p)
+            }, 3000)
+
+        }
+
+        function validate(){
+        let reg=/^[_]{0,1}[A-Za-z0-9]{2,15}[@]{1}[a-z]{3,7}[.]{1}[a-z]{3}$/
+        let email = document.getElementById('e_mail').value
+        let valid = reg.test(email)
+        if (valid==true) {
+            displ.innerHTML='Email valid' 
+        }else{
+            displ.innerHTML=' Enter valid email'
+        }
+        console.log(valid)
+        }
+     </script>
+
+<script src="js/level2project.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>   
+</body>
+</html>

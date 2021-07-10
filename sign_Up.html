@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <script src="js/level2project.js"></script>
+    <title>Sign up</title>
+    <style>
+       
+       
+     .card{
+           width: 400px;
+          /* height: 600px; */
+            }
+    @media only screen and (max-width: 600px) {
+    .card{
+        width: 300px;
+        /* height: 550px; */
+
+  }
+}
+    </style>
+</head>
+
+<body class="pt-5 s-cover">
+    <main class="card mx-auto  bg-white mt-4 " style="border-radius: 10px; ">
+     <div class="card-body">
+         <section id="form2">
+            <div class=" text-center">
+             <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
+                 <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                  Lilies  </a>
+            </div>
+             <div  style="font-size: 30px; border-radius: 10px;"  id="signIn" class=" w-50  fw-bold text-warning mt-4 mx-auto  text-center"> SIGN UP</div>
+      
+                   <div class="form-group">
+                    <label for="Description" class="fw-bold mt-3">Name</label>
+                    <input class="form-control" type="text" id="na_me" placeholder="Enter your full name">
+                   </div>
+                    <div class="form-group">
+                        <label for="Username" class="fw-bold mt-3"> Username</label>
+                        <input type="text" class="form-control" id="user_name">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="Email" class="fw-bold mt-3">Email</label>
+                        <input type="email" onkeyup="validation()" class="form-control" id="e_mail" placeholder=" E.g Paradise@gmail.com">
+                        <h6 id="disp"></h6>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="Password" class="fw-bold mt-3">Password</label>
+                        <input type="password" class="form-control" id="pass_word" placeholder="*****">
+                    </div>
+            
+                     <section class="row">
+                        <div class="col-sm">
+                            <button style="font-size: 24px;"class="btn bg-warning text-white mt-4 shadow p-1 fw-bold w-100" onclick="add_admin()">
+                                Sign Up 
+                            </button>
+                        </div>
+                       <div class=" col-sm">
+                         <a href="Sign_In.html"> <button style="font-size: 24px;"
+                               class="btn text-dark mt-3 shadow border-warning p-1 fw-bold w-100 mt-4">Sign In </button></a>
+                        </div>
+                     </section>
+        
+         </section>
+      </div>
+
+      
+        <div class="modal" tabindex="-1" id="moda" style="display: none;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-warning"> Lilies</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Congratulations! Sign Up successful</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="disappear()">Close</button>
+                 
+                </div>
+              </div>
+            </div>
+      </div>
+    </main>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

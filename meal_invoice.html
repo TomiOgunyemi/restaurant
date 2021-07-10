@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <title>Invoice-restaurant</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm container-fluid bg-white sticky-top">
+        <a href="home.html" class="navbar-brand m-2 text-muted options fw-bold"> 
+            <i class="	fa fa-cutlery fa-lg text-warning"></i>
+             Lilies  </a>
+    
+                <div class=" ">
+                    <a href="Sign_In.html" id="signin_btn" class=" btn shadow p-2 m-2 fw-bold"><i class="fa fa-user me-1"></i> Sign In</a>
+                    <button id="logout_btn" class=" btn shadow p-2 m-2 fw-bold" hidden><i class="fa fa-user me-1" ></i> Log Out</button>
+                    <a href="Order- Restaurant.html"> <button class=" btn btn-warning shadow p-2 m-2 fw-bold">Order Now</button></a>
+                </div>
+    </nav> 
+    <h2 class="text-center text-warning p-">E-Receipts</h2>
+    <table class="table table-bordered table-secondary">
+        <thead class="bg-light">
+            <tr class="text-white bg-warning">
+                <th>S/N</th>
+                <th>PRODUCT</th>
+                <th>RATE PER UNIT (N)</th>
+                <th>QUANTITY</th>
+                <th>TOTAL AMOUNT(N)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="dat bg-warn" id="bod" >
+            <tr class="data">
+                <td id="Sn">1</td>
+                <td><input type="text" class="form-control Item"></td>
+                <td><input type="text" class="form-control Rate"></td>
+                <td><input type="text" class="form-control quantity"></td>
+                <td><input type="text" class="form-control total_amount"></td>
+                <td><button class='btn btn-danger'>Edit</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div style="display:flex;justify-content:space-between">
+        <div>
+            <button class="btn btn-warning font-weight-bold btn-lg" id="add">+</button>
+            <button class="btn btn-danger font-weight-bold btn-lg" id="remove_btn">-</button>
+        </div>
+        <h4 class="mr-5">Total: <span id="tot"></span></h4>
+    </div>
+    <script>
+        let num = 1;
+        let amount = 0;
+        let grand_total = 0;
+        $(document).ready(function () {
+
+            $('#add').click(function (params) {
+                num++
+                let div = `<tr class='data'>
+                        <td id='Sn'>${num}</td>
+                        <td><input type="text" class="form-control Item"></td>
+                        <td><input type="text" class="form-control Rate"></td>
+                        <td><input type="text" class="form-control quantity"></td>
+                        <td><input type="text" class="form-control total_amount" ></td>
+                        <td><button class='btn btn-danger'>Edit</button></td>
+                </tr>`
+                $('.dat').append(div)
+                calc()
+
+
+            })
+
+            function calc() {
+                $('.dat input').on('keyup', function () {
+                    let val1 = $(this).closest('.data').find('.Rate').val()
+                    let val2 = $(this).closest('.data').find('.quantity').val()
+                    let ans = parseInt(val1) * parseInt(val2);
+                    if (!isNaN(ans)) {
+
+                        // $(this).closest('tbody').children(".data").each(function(){
+                        //  let total = ($(this).find('.total_amount').val())
+
+                        // });
+
+                        grand_total = ans;
+                        if (num == 1) {
+                            $(this).closest('.data').find('.total_amount').val(ans);
+                            $('#tot').html(ans)
+                        }
+                        else{
+                            $(this).closest('.data').find('.total_amount').val(ans); 
+                            $('#tot').html(parseInt($('#tot').html())+ans)
+                        }
+                    }
+
+                })
+            }
+            calc()
+            $('#remove_btn').click(function () {
+                $('.dat tr').last('tr').remove('tr')
+                count--;
+            })
+        })
+
+    </script>
+</body>
+
+</html>

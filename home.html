@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Restaurant</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+</style>
+<body>
+             <nav class="navbar navbar-expand-sm container-fluid bg-white sticky-top">
+                <a href="home.html" class="navbar-brand m-2 text-muted options fw-bold"> 
+                    <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                     Lilies  </a>
+              
+                   <div class="navbar-collapse collapse justify-content-end" id="collap">
+                    <ul class="navbar-nav">
+                        <li class="navbar-item dropdown">
+                            
+                            <a href="#" style="text-decoration: none;" class=" options nav-link text-muted m-2 dropdown-toggle"  id="navbardrop" data-bs-toggle="dropdown"> Reservations</a>
+                            
+                            <div class="dropdown-menu">
+                                <p  class="drowdown-item m-2 fw-bold options">Table for Two</p>
+                            </div>
+
+                        </li>
+
+                        <li class="navbar-item">
+                            <a href="AboutUs.html"  style="text-decoration: none;" class="options nav-link text-muted m-2 "> About</a>
+                        </li>
+                       <a href="Sign_In.html" id="signin_btn" class=" btn shadow p-2 m-2 fw-bold"><i class="fa fa-user me-1"></i> Sign In</a>
+                       <button id="logout_btn" onclick="logOut()" class=" btn shadow p-2 m-2 fw-bold" hidden><i class="fa fa-user me-1" ></i> Log Out</button>
+                       <a href="Order-Restaurant.html"> <button class=" btn btn-warning shadow p-2 m-2 fw-bold">Order Now</button></a>
+                       <a href="Admin-dashboard.html"> <button class=" btn text-warning shadow p-2 m-2 fw-bold">Admin</button></a>
+                    </ul>
+                   </div>
+                    
+            </nav> 
+            <div class="mother d-sm-none justify-content-end" data-bs-toggle="collapse"  data-bs-target ="#collap" onclick="myBurger(this)">
+                <div class="bar1"></div> 
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+     
+        <main class="b-cover">
+        <div class="hero-text">
+            <h3 class="Lil">Lilies</h3>
+            <h6 class="swet">classy is sweet</h6>
+        </div> 
+    </main>
+    <section  style=" background-color: black;" class=" container-fluid pr-5">
+        <div class="row text-light">
+                
+             <div class="col-sm ">
+                <div class="" style="height: 100%;  width: 100%; overflow: hidden;">
+                        <img src="images/realll_home.png" alt=""  style="opacity: 0.8; width: 130%;">
+                </div>
+            </div>
+            <div class="col-sm">
+                <h5 class="lil text-center" style="margin-top: 100px;">"Bringing <strong>taste</strong> and <strong> elegance</strong> <br>  in the same place..." </h5>
+                <div>
+                    <h6 class="text-center mt-3">Oliver Estate, 20 Adeshina road, Ado-Ekiti,Nigeria</h6> <br>
+                    <p class="litu text-center">Since November 06, 1999</p>
+                    <hr class="hr-warning"> 
+                </div>
+            </div>
+            <div class="col-sm">
+                <img src="images/Bar.png" alt=""  style="opacity: 0.8; width: 100%;" >
+            </div>
+        </div>
+     </section>
+
+    
+        <main class="container-fluid p-5 bg-white">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="" class="navbar-brand m-2 text-muted options fw-bold"> 
+                        <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                         Lilies  </a>
+                </div>
+                <div class="col-sm ">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold"><li class="nav-link text-muted"></li> CONTACT US</a>
+                        <a href="#" class="link mt-3"> <li class="nav-link"> </li>For enquiries on any of our goods and services,
+                             reach out to us at<strong> Email: LiliesRestaurant@gmail.com </strong></a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"> </li>Help center</a>
+                     </ul>
+                 </div>
+
+                 <div class="col-sm">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold "><li class="nav-link "></li>COMPANY</a>
+                        <a href="#" class="link mt-3 fw-bold"> <li class="nav-link"></li> About Lilies</a>
+                        <a href="#" class="link fw-bold "> <li class="nav-link"></li> Meet the Team</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link "></li> Blog</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link "></li> FAQs for Customers</a>     
+                    </ul>
+                </div>
+                <div class="col-sm ">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold"><li class="nav-link fw-bold"></li> LEGAL</a>
+                        <a href="#" class="link mt-3 fw-bold"> <li class="nav-link"></li> Terms & Conditions</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li> Privacy Policy</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li> Cancellation and Refunds</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li>Press</a>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="b-foot">
+            <div>
+
+            </div>
+            <div class="f-foot justify-content-center ">
+                <strong class="m-2">FOLLOW US</strong>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-facebook fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-twitter fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-instagram fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color:orange; margin: 10px;"> <i class="fa fa-google-plus fa-lg"></i></a>
+            </div>
+            <div class="text-center" style="font-size: 12px;">
+                 ©2021, Powered by DotRex. All Rights Reserved.
+            </div>
+            <br>
+           <div style="height: 5px;">
+                
+           </div>
+        
+         </footer>
+     </section>
+           
+   
+     <script src="js/level2project.js"></script>
+    
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

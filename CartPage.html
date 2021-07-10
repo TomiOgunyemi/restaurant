@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart-Restaurant</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/level2project.js"></script>
+</head>
+<style>
+    .data{
+        font-size: 20px;
+    }
+</style>
+<body>
+   
+    <nav class="navbar navbar-expand-sm container-fluid bg-light sticky-top">
+        <a href="home.html" class="navbar-brand m-2 text-muted options fw-bold"> 
+            <i class="	fa fa-cutlery fa-lg text-warning"></i>
+             Lilies  </a>
+      
+           <div class="navbar-collapse collapse justify-content-end" id="collap">
+            <ul class="navbar-nav">
+                <li class="navbar-item dropdown">
+                    
+                    <a href="#" style="text-decoration: none;" class=" options nav-link text-muted m-2 dropdown-toggle  "  id="navbardrop" data-bs-toggle="dropdown"> Reservations</a>
+                    
+                    <div class="dropdown-menu">
+                        <p  class="drowdown-item m-2 fw-bold options">  Home Delivery</p>
+                        <p  class="drowdown-item m-2 fw-bold options">  Self Pickup</p>
+                    </div>
+
+                </li>
+
+                <li class="navbar-item">
+                    <a href="AboutUs.html"  style="text-decoration: none;" class="options nav-link text-muted m-2 "> About</a>
+                </li>
+               
+                <div class="form-control bg-light p-0 p-2 col-sm"  >
+                    <i class="fa fa-search"></i>
+                    <input type="text" class=" x-input border-0 bg-white w-75 p-2 " placeholder="Enter name of food">
+                </div>
+                <a href="Sign_In.html" id="signin_btn" class=" btn shadow p-2 m-2 fw-bold"><i class="fa fa-user me-1"></i> Sign In</a>
+                <button id="logout_btn" class=" btn shadow p-2 m-2 fw-bold" hidden><i class="fa fa-user me-1" ></i> Log Out</button>
+               
+                <a href="Order-Restaurant.html"> <button class=" btn btn-warning shadow p-2 m-2 fw-bold">Order Now</button></a>
+               
+                <li class="navbar-item">
+                    <a href=""> <i class="fa fa-cart-plus fa-lg text-warning p-3 btn btn-light btn-lg border-warning">My Cart</i></a>
+                  </li>
+            </ul>
+            
+           </div>
+            
+    </nav> 
+        <h1 class="mt-5" >Shopping cart</h1>
+
+        <section class="container-fluid bg-light">
+            <div class="">
+               <a href="" class="btn btn-light border-warning btn-lg shadow mt-3 mb-4"> >> Continue Shopping</a>
+            </div>
+
+           <section class="container-fluid">
+               <div class="row">
+                   <div class="col-sm-8">
+                    <div class="bg-white">
+                        <table class="table ">
+                                <tr class=""> 
+                                  <th>S/N</th>
+                                  <th>ITEM DETAILS</th>
+                                  <th>QUANTITY</th>
+                                  <th>ITEM PRICE</th>
+                                 <th class="text-center">ACTIONS</th>
+                                </tr>
+                            <tbody id="cart_item">
+                               
+                            </tbody>     
+                        </table> 
+                    </div>
+                   </div>
+
+                    <div class="col-sm-3">
+                        <div class="card ">
+                           <div class="card-body pt-5">
+                                  <!-- <div class="d-flex justify-content-between">
+                                      <strong>Order Summary</strong>
+                                      <strong> 1 Item</strong>
+                                  </div>
+                                  <hr>
+                                  <div class="d-flex justify-content-between">
+                                    <strong>Subtotal:</strong>
+                                    <strong>2000</strong>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <strong>Delivery Charges</strong>
+                                    <p> At the Checkpoint</p>
+                                </div>
+                                <hr>
+                                -->
+                                <div class="d-flex justify-content-between">
+                                    <strong>Total</strong>
+                                    <strong id="total"> 2000</strong>
+                                </div> 
+                                <br>
+                                <a href="Checkout.html">Proceed to checkout</a>
+                          </div>
+                   </div>
+               </div>
+           </section>
+        </div>
+        </section>
+        <style>
+            .link{
+                color: white;
+            }
+        </style>
+
+        <main class="container-fluid p-5 bg-dark">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="" class="navbar-brand m-2 text-white options fw-bold"> 
+                        <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                         Lilies  </a>
+                </div>
+                <div class="col-sm ">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold"><li class="nav-link text-white"></li> CONTACT US</a>
+                        <a href="#" class="link mt-3"> <li class="nav-link"> </li>For enquiries on any of our goods and services,
+                             reach out to us at<strong> Email: LiliesRestaurant@gmail.com </strong></a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"> </li>Help center</a>
+                     </ul>
+                 </div>
+
+                 <div class="col-sm">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold "><li class="nav-link "></li>COMPANY</a>
+                        <a href="#" class="link mt-3 fw-bold"> <li class="nav-link"></li> About Lilies</a>
+                        <a href="#" class="link fw-bold "> <li class="nav-link"></li> Meet the Team</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link "></li> Blog</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link "></li> FAQs for Customers</a>     
+                    </ul>
+                </div>
+                <div class="col-sm ">
+                    <ul class="navbar-nav">
+                        <a href="#" class="link fw-bold"><li class="nav-link fw-bold"></li> LEGAL</a>
+                        <a href="#" class="link mt-3 fw-bold"> <li class="nav-link"></li> Terms & Conditions</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li> Privacy Policy</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li> Cancellation and Refunds</a>
+                        <a href="#" class="link fw-bold"> <li class="nav-link"></li>Press</a>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="b-foot">
+            <div>
+
+            </div>
+            <div class="f-foot justify-content-center ">
+                <strong class="m-2">FOLLOW US</strong>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-facebook fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-twitter fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color: orange; margin: 10px;"> <i class="fa fa-instagram fa-lg"></i></a>
+               <a href="" style="text-decoration: none; color:orange; margin: 10px;"> <i class="fa fa-google-plus fa-lg"></i></a>
+            </div>
+            <div class="text-center" style="font-size: 12px;">
+                 ©2021, Powered by DotRex. All Rights Reserved.
+            </div>
+            <br>
+           <div style="height: 5px;">
+                
+           </div>
+        
+         </footer>
+     </section>
+
+</body>
+</html>
+
+<script>
+
+        let price = 0;
+        function get_cart_item(params) {
+            var gottencart = localStorage.getItem('cart')
+            gottencart= JSON.parse(gottencart)
+            for (let index = 0; index < gottencart.length; index++) {
+                price = price + Number(gottencart[index].prices)
+                document.getElementById('cart_item').innerHTML += `
+                    <tr class="data" >
+                                    <td id="Sn">${index +1}</td>
+                                    <td>${gottencart[index].food}</td>
+                                    <td>1</td>
+                                    <td>${gottencart[index].prices}</td>
+                                    <td>
+                                        <button class="btn btn-danger text-white" onclick="delete_item_in_cart(${index})">Remove item</button>
+                                </tr>
+                     `
+                
+            }
+            document.getElementById('total').innerText = price
+
+        }
+        get_cart_item()
+
+        function delete_item_in_cart(index) {
+            var gottencart = localStorage.getItem('cart')
+            gottencart= JSON.parse(gottencart)
+
+            gottencart.splice(index, 1)
+            
+            price = price - Number(gottencart[index].prices)
+            document.getElementById('total').innerText = price
+            document.getElementById('cart_item').innerHTML = "";
+            for (let index = 0; index < gottencart.length; index++) {
+                document.getElementById('cart_item').innerHTML += `
+                    <tr class="data" >
+                                    <td id="Sn">${index +1}</td>
+                                    <td>${gottencart[index].food}</td>
+                                    <td>1</td>
+                                    <td>${gottencart[index].prices}</td>
+                                    <td>
+                                        <button class="btn btn-danger text-white" onclick="delete_item_in_cart()">Remove item</button>
+                                </tr>
+                     `
+                
+            }
+
+            localStorage.setItem('cart', JSON.stringify(gottencart))
+
+        }
+
+
+</script>

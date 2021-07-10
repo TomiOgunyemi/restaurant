@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/level2project.css">
+    <script src="js/level2project.js"></script>
+    <title>Checkpoint</title>
+    <style>
+        .rata{font-weight: bold;
+            font-style: italic;
+            font-stretch: normal;
+            font-family:Lucida Handwriting, Cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(233, 173, 19);
+        }
+    </style>
+</head>
+<body>
+    <main class="bg-light py-5 ">
+        <section class="card shadow  mx-auto " style="max-width: 400px;">
+            <div class="bg-light p-3 text-center">
+                <a href="home.html" class=" m-2 text-muted fw-bold text-center" style="font-size: 35px; text-decoration: none;"> 
+                    <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                     Lilies </a>
+                     <br><br>
+                     <h3 class=" text-center">Checkout</h3>
+            </div>
+
+
+            <div class="p-2">
+                <ul class="list-group ">
+                    <div id="cart_item">
+                        
+                    </div>
+                   
+                    <li class="list-group-item p-2 d-flex justify-content-end" >
+                        <span class="small me-2 fw-bold">Total</span>
+                        <p id="total">0</p>
+                    </li>
+                  </ul>
+            </div>
+
+
+            <div class="d-flex justify-content-around align-items-center">
+                <p><img src="images/visa.png" alt="" width="70px"></p>
+                <p style="opacity: 0.3;"><img src="images/mastercard.jpg" alt="" width="70px"></p>
+                <p style="opacity: 0.3;"><img src="images/paypal.jpg" alt="" width="70px"></p>
+            </div>
+
+            <div class="card-body bg-light">
+
+
+                <div class="form-group">
+                    Cardholder's name
+                   <input type="text" class="form-control">
+               </div>
+
+               <div class="form-group my-3">
+                    Card number
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="d-flex ">
+                     <div class="me-2">
+                         <label for="">Exp. Date</label>
+                        <input type="text" class="form-control">
+                     </div>
+                    <div>
+                        <label for="">CVC/CVC2</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div>
+                <button class="btn btn-warning w-100 btn-lg fw-bold">PAY NOW</button>
+            </div>
+            
+        </section>
+
+    
+    </main>
+</body>
+</html>
+
+<script>
+     let price = 0;
+        function get_cart_item(params) {
+            var gottencart = localStorage.getItem('cart')
+            gottencart= JSON.parse(gottencart)
+            for (let index = 0; index < gottencart.length; index++) {
+                price = price + Number(gottencart[index].prices)
+                document.getElementById('cart_item').innerHTML += `
+                <li class="list-group-item p-2 d-flex justify-content-between" >
+                        <p>${gottencart[index].food}</p>
+                        <p>${gottencart[index].prices}</p>
+                    </li>
+                     `
+                
+            }
+            document.getElementById('total').innerText = price
+
+        }
+        get_cart_item()
+</script>
