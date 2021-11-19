@@ -138,6 +138,27 @@
         cursor: pointer;
         transition: all 0.4s ease;
     }
+    .container #flip{
+        display:none;
+    }
+    @media (max-width: 730px){
+        .container .cover{
+            display:none !important;
+        }
+        .signin, 
+        .SignUp{
+            width: 100% !important;
+        }
+        .SignUp{
+            display: none !important;
+        }
+     .container #flip:checked ~ form .SignUp{
+            display: block !important;
+        }
+     .container #flip:checked ~ form .Signin{
+            display: none !important;
+        }
+    }
     </style>
 </head>
 <body>
@@ -162,8 +183,9 @@
             </div>
             <form action="">
                 <main class="d-flx p-4" style="display: flex; justify-content: space-evenly;">
-                   <div class="form-content">
-                        <div class=" text-center">
+                   <div class="signin">
+                      <div class="signIn">
+                            <div class=" text-center">
                             <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
                                 <i class="fa fa-cutlery fa-lg MyColor"></i>
                                 Lilies  </a>
@@ -179,7 +201,7 @@
     
                             <div class=" form-group">
                                <div class="sam p-2">
-                                    <i class="fa MyColor fa-envelope"></i>
+                                    <i class="fa MyColor fa-lock"></i>
                                     <input type="text"  placeholder="Enter your Password" required>
                                </div>
                                <div class="mt-1"><a href="#"> Forgot Password?</a></div>
@@ -188,14 +210,15 @@
                             <div class="pt-2">Don't have an account? <a href="#"><label for="flip">Sign Up</label></a></div>
                         </div>
                      </div>
-                  <div class="SignUp">
-                    <div class=" text-center">
+                    </div>
+                    <div class="SignUp">
+                      <div class=" text-center">
                         <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
                             <i class="	fa fa-cutlery fa-lg MyColor"></i>
                              Lilies  </a>
                        </div>
                         <div class="title MyColor mb-3">Sign Up</div>
-                            <div class="input-boxes">
+                        <div class="input-boxes">
                                 <div class="form-group">
                                     <div class="sam p-2">
                                         <i class="fa fa-user MyColor"></i>
@@ -220,9 +243,16 @@
                                      <input type="text" placeholder="Enter your Username" required>
                                     </div>
                                  </div>
+                                 <div class="form-group">
+                                    <div class="sam p-2">
+                                     <i class="fa fa-lock MyColor"></i>
+                                     <input type="text" placeholder="Enter your Password" required>
+                                    </div>
+                                 </div>
                                    <button class="btn w-100 font-weight-bold text-white" style="background-color: navy;">SUBMIT</button>
                                    <div class="pt-2">Already have an account? <a href="#"><label for="flip">Sign In</label></a></div>
-                            </div>
+                            </div>   
+                     </div>
                 <main>
             
             </form>

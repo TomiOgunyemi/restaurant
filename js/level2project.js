@@ -14,7 +14,6 @@ function add_admin() {
     let data = {name: add_name, username: add_username, email: add_email, password: add_password}
     
     if (add_name == '' && add_username == '' && add_email == '' && add_password == '') {
-        alert("empty field")
         return;
     }
     
