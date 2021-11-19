@@ -127,11 +127,3 @@ html, body {
     /* opacity: 0.8; */
 }
 
-.in-cover {
-    background: url(../images/Bar.png) no-repeat center; 
-    background-size: cover;
-    /* height: 600px; */
-    position: relative;
-    width: 100%;
-    /* opacity: 0.8; */
-}
